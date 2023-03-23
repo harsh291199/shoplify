@@ -19,6 +19,7 @@
         method: :delete
       ) %>
       <%= link_to "Products", products_path %>
+      <%= current_user.stripe_customer_id %>
     <% else %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
