@@ -17,10 +17,16 @@ class CheckoutController < ApplicationController
         },
       ],
       mode: 'payment',
-      success_url: root_url,
-      cancel_url: root_url,
+      success_url: success_url,
+      cancel_url: cancel_url,
     })
 
     redirect_to @session.url, allow_other_host: true
+  end
+
+  def success
+  end
+
+  def cancel
   end
 end

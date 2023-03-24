@@ -17,21 +17,21 @@
 
   <tbody>
     <% @products.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= number_to_indian_currency(product.price) %></td>
-      <td><%= product.stripe_product_id %></td>
-      <td><%= product.stripe_price_id %></td>
-      <td><%= button_to "Buy now", checkout_create_path, params: {id: product.id }, remote: true,  data: { turbo: false } %></td>
-      <td><%= product.sales_count %></td>
-      <td><%= link_to "Show", product %></td>
-      <td><%= link_to "Edit", edit_product_path(product) %></td>
-      <td><%= link_to "Destroy", product, data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></td>
-    </tr>
-  <% end %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= number_to_indian_currency(product.price) %></td>
+        <td><%= product.stripe_product_id %></td>
+        <td><%= product.stripe_price_id %></td>
+        <td><%= button_to "Buy now", checkout_create_path, params: {id: product.id }, remote: true, data: { turbo: false } %></td>
+        <td><%= product.sales_count %></td>
+        <td><%= link_to "Show", product %></td>
+        <td><%= link_to "Edit", edit_product_path(product) %></td>
+        <td><%= link_to "Destroy", product, data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
